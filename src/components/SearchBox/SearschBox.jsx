@@ -1,12 +1,13 @@
 import { useId } from "react";
 import s from "./SearschBox.module.css";
 import { useDispatch, useSelector } from "react-redux";
-import { changeFilter, filterName } from "../../redux/filtersSlice";
+import { changeFilter } from "../../redux/filters/filtersSlice";
+import { selectFilterName } from "../../redux/filters/filtersSelectors";
 
 const SearschBox = () => {
   const id = useId();
   const dispatch = useDispatch();
-  const filter = useSelector(filterName);
+  const filter = useSelector(selectFilterName);
 
   return (
     <>

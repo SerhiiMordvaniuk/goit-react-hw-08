@@ -1,0 +1,22 @@
+.header {
+  background-color: rgb(66, 65, 65);
+  width: 1280px;
+  border-radius: 2px;
+  padding: 20px;
+  margin-bottom: 10px;
+}
+.nav {
+  display: flex;
+  gap: 20px;
+  text-decoration: none;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.active {
+  text-decoration: underline;
+  color: red;
+}
