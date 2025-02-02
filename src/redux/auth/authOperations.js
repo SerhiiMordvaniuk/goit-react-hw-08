@@ -6,7 +6,7 @@ export const contactsApi = axios.create({
 });
 
 export const setAuthHeader = (token) => {
-  axios.defaults.headers.common.Authorization = `Bearer ${token}`;
+  contactsApi.defaults.headers.common.Authorization = `Bearer ${token}`;
 };
 
 export const registerThunk = createAsyncThunk(
@@ -40,8 +40,17 @@ export const loginThunk = createAsyncThunk(
 export const logoutThunk = createAsyncThunk(
   "auth/logout",
   async (_, thunkAPI) => {
+    const token = thunkAPI.getState().auth.token;
     try {
-      const { data } = await contactsApi.post("users/logout");
+      const { data } = await contactsApi.post(
+        "users/logout",
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);

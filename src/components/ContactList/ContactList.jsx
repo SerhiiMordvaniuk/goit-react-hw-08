@@ -17,6 +17,7 @@ const ContactList = () => {
   useEffect(() => {
     dispatch(fetchContacts());
   }, [dispatch]);
+
   const contactList = useSelector(selectFilteredContacts);
 
   const error = useSelector(selectError);
