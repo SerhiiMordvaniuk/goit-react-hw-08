@@ -1,7 +1,3 @@
-import { useEffect } from "react";
-
-import { useDispatch } from "react-redux";
-
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
 import Home from "../pages/Home/Home";
@@ -10,14 +6,16 @@ import Layout from "./Layout";
 import Contacts from "../pages/Contacts/Contacts";
 import Login from "../pages/Login/Login";
 import Register from "../pages/RegistrationForm/RegistrationForm";
-import { fetchContacts } from "../redux/contacts/contactsOperations";
+import { useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { refreshUserThunk } from "../redux/auth/authOperations";
 
 function App() {
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   dispatch(fetchContacts());
-  // }, [dispatch]);
+  useEffect(() => {
+    dispatch(refreshUserThunk());
+  }, [dispatch]);
   return (
     <>
       <Routes>

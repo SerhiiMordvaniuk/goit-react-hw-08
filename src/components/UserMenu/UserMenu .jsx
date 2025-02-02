@@ -1,20 +1,18 @@
 import React from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import s from "./Header.module.css";
+import { NavLink, useNavigate } from "react-router-dom";
+import s from "./UserMenu.module.css";
 import clsx from "clsx";
 import { selectIsLoggedIn, selectUser } from "../../redux/auth/authSelectors";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutThunk } from "../../redux/auth/authOperations";
-import axios from "axios";
 
 const buildLinkClass = ({ isActive }) => {
   return clsx(s.link, isActive && s.active);
 };
 
-const Header = () => {
+const UserMenu = () => {
   const user = useSelector(selectUser);
   const isLoggedIn = useSelector(selectIsLoggedIn);
-  console.log(isLoggedIn);
   const dispath = useDispatch();
   const navigate = useNavigate();
   const handleClick = () => {
@@ -51,4 +49,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default UserMenu;

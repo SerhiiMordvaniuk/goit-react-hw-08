@@ -1,11 +1,11 @@
 import React from "react";
-import Header from "./Header/Header";
 import { Outlet } from "react-router-dom";
+import UserMenu from "./UserMenu/UserMenu ";
 
 const Loyout = () => {
   return (
     <>
-      <Header />
+      <UserMenu />
       <Outlet />
     </>
   );

@@ -27,8 +27,6 @@ export const loginThunk = createAsyncThunk(
   async (cradentials, thunkAPI) => {
     try {
       const { data } = await contactsApi.post("users/login", cradentials);
-      console.log(data);
-
       setAuthHeader(data.token);
       return data;
     } catch (error) {
@@ -40,17 +38,27 @@ export const loginThunk = createAsyncThunk(
 export const logoutThunk = createAsyncThunk(
   "auth/logout",
   async (_, thunkAPI) => {
-    const token = thunkAPI.getState().auth.token;
     try {
-      const { data } = await contactsApi.post(
-        "users/logout",
-        {},
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
+      const { data } = await contactsApi.post("users/logout");
+      return data;
+    } catch (error) {
+      return thunkAPI.rejectWithValue(error.message);
+    }
+  }
+);
+
+export const refreshUserThunk = createAsyncThunk(
+  "auth/refresh",
+  async (_, thunkAPI) => {
+    const saveToken = thunkAPI.getState().auth.token;
+    if (saveToken === null) {
+      return thunkAPI.rejectWithValue("token not found");
+    }
+
+    setAuthHeader(saveToken);
+
+    try {
+      const { data } = await contactsApi.get("/users/current");
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
