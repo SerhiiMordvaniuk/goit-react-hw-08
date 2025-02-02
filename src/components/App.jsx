@@ -1,22 +1,24 @@
 import "./App.css";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Home from "../pages/Home/Home";
 import NotFound from "../pages/NotFound/NotFound";
 import Layout from "./Layout";
 import Contacts from "../pages/Contacts/Contacts";
 import Login from "../pages/Login/Login";
 import Register from "../pages/RegistrationForm/RegistrationForm";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { refreshUserThunk } from "../redux/auth/authOperations";
+import { selectIsRefreshing } from "../redux/auth/authSelectors";
 
 function App() {
   const dispatch = useDispatch();
+  const isRefreshing = useSelector(selectIsRefreshing);
 
   useEffect(() => {
     dispatch(refreshUserThunk());
   }, [dispatch]);
-  return (
+  return isRefreshing ? null : (
     <>
       <Routes>
         <Route path="/" element={<Layout />}>
