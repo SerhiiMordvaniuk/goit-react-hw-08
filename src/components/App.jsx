@@ -13,7 +13,7 @@ import Register from "../pages/RegistrationForm/RegistrationForm";
 import { fetchContacts } from "../redux/contacts/contactsOperations";
 
 function App() {
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   // useEffect(() => {
   //   dispatch(fetchContacts());

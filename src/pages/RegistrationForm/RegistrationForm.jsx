@@ -1,23 +1,27 @@
 import { Formik, Form, Field } from "formik";
 import React from "react";
-import { useDispatch } from "react-redux";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import { registerThunk } from "../../redux/auth/authOperations";
+import { selectIsLoggedIn, selectUser } from "../../redux/auth/authSelectors";
 
 const Register = () => {
   const dispatch = useDispatch();
+  const isLoggedIn = useSelector(selectIsLoggedIn);
+  const user = useSelector(selectUser);
+  console.log(isLoggedIn);
+  console.log(user);
 
   const initialValues = {
     name: "",
     email: "",
     password: "",
   };
+  const navigate = useNavigate();
 
   const handleSubmit = (values, options) => {
-    console.log(values);
-    console.log(initialValues);
+    dispatch(registerThunk(values)).unwrap().then(navigate("/"));
 
-    dispatch(registerThunk(values));
     options.resetForm();
   };
 
@@ -44,6 +48,7 @@ const Register = () => {
       <p>
         Have an account? <Link to="/login">Login</Link>
       </p>
+      {isLoggedIn && <Link to="/">Home</Link>}
     </>
   );
 };
