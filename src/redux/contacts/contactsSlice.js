@@ -50,7 +50,9 @@ export const selectFilteredContacts = createSelector(
   (filter, contacts) =>
     !filter.trim()
       ? contacts
-      : contacts.filter(({ name }) =>
-          name.toLowerCase().includes(filter.toLowerCase())
+      : contacts.filter(
+          ({ name, number }) =>
+            name.toLowerCase().includes(filter.toLowerCase()) ||
+            number.toLowerCase().includes(filter.toLowerCase())
         )
 );
