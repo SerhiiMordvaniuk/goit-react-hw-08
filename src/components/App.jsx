@@ -4,7 +4,7 @@ import Home from "../pages/Home/Home";
 import NotFound from "../pages/NotFound/NotFound";
 import Layout from "./Layout";
 import Contacts from "../pages/Contacts/Contacts";
-import Login from "../pages/Login/Login";
+import LoginForm from "../pages//LoginForm/LoginForm";
 import Register from "../pages/RegistrationForm/RegistrationForm";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
@@ -39,7 +39,7 @@ function App() {
           path="/login"
           element={
             <PublicRoute>
-              <Login />
+              <LoginForm />
             </PublicRoute>
           }
         ></Route>
