@@ -13,7 +13,7 @@ const SearschBox = () => {
     <>
       <form>
         <label htmlFor={id} className={s.form}>
-          <span>Find contact by name</span>
+          <span className={s.text}>Find contact by name</span>
           <input
             name="text"
             className={s.input}

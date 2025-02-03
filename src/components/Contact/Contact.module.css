@@ -1,11 +1,12 @@
 .item {
-  padding: 10px 10px;
-  border: 2px solid black;
+  padding: 20px 20px;
+  border: 1px solid var(--primary-color);
   border-radius: 10px;
   display: flex;
   width: 300px;
   justify-content: space-between;
   align-items: center;
+  background-color: var(--light-text-color);
 }
 
 .contacts {
@@ -15,16 +16,26 @@
 }
 
 .btn {
-  background-color: rgb(232, 232, 232);
-  border: 1px solid black;
-  border-radius: 4px;
+  background-color: var(--primary-color);
+  border: none;
+  border-radius: 5px;
   color: black;
   width: 80px;
   height: 40px;
   transition: all 250ms;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 157%;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: var(--light-text-color);
 
   &:active {
     transform: scale(0.95);
+  }
+  &:hover {
+    background-color: var(--hover-color);
   }
 }
 
@@ -32,4 +43,22 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 133%;
+  letter-spacing: 0em;
+  color: var(--primary-color);
+}
+
+.number {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 171%;
+  letter-spacing: 0.01em;
+  color: var(--second-text-color);
 }

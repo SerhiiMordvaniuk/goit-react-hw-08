@@ -12,15 +12,15 @@ const Contact = ({ id, name, number }) => {
   };
 
   return (
-    <>
+    <div>
       <div className={s.item}>
         <div className={s.contacts}>
           <div className={s.contact}>
-            <FaUserAlt size="20" />
+            <FaUserAlt size="20" color="var(--second-text-color)" />
             <p>{name}</p>
           </div>
-          <div className={s.contact}>
-            <FaPhoneAlt size="20" />
+          <div className={s.number}>
+            <FaPhoneAlt size="20" color="var(--second-text-color)" />
             <p>{number}</p>
           </div>
         </div>
@@ -33,7 +33,7 @@ const Contact = ({ id, name, number }) => {
           Delete
         </button>
       </div>
-    </>
+    </div>
   );
 };
 

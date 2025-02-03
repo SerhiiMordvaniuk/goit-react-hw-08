@@ -4,13 +4,12 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { registerThunk } from "../../redux/auth/authOperations";
 import { selectIsLoggedIn, selectUser } from "../../redux/auth/authSelectors";
+import s from "./RegistrationForm.module.css";
 
 const Register = () => {
   const dispatch = useDispatch();
   const isLoggedIn = useSelector(selectIsLoggedIn);
   const user = useSelector(selectUser);
-  console.log(isLoggedIn);
-  console.log(user);
 
   const initialValues = {
     name: "",
@@ -26,30 +25,38 @@ const Register = () => {
   };
 
   return (
-    <>
-      <p>register</p>
+    <div className="container">
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-        <Form>
-          <label>
-            <span>Name</span>
-            <Field name="name" />
+        <Form className={s.form}>
+          <label className={s.label}>
+            <span className={s.span}>Name</span>
+            <Field name="name" className={s.input} />
           </label>
-          <label>
-            <span>E-mail</span>
-            <Field name="email" />
+          <label className={s.label}>
+            <span className={s.span}>E-mail</span>
+            <Field name="email" className={s.input} />
           </label>
-          <label>
-            <span>Password</span>
-            <Field type="password" name="password" />
+          <label className={s.label}>
+            <span className={s.span}>Password</span>
+            <Field type="password" name="password" className={s.input} />
           </label>
-          <button type="submit">Register</button>
+          <button type="submit" className={s.button}>
+            Register
+          </button>
+          <p className={s.text}>
+            Have an account?{" "}
+            <Link to="/login">
+              <span className={s.link}>Login</span>
+            </Link>
+          </p>
+          {isLoggedIn && (
+            <Link to="/">
+              <s>Home</s>
+            </Link>
+          )}
         </Form>
       </Formik>
-      <p>
-        Have an account? <Link to="/login">Login</Link>
-      </p>
-      {isLoggedIn && <Link to="/">Home</Link>}
-    </>
+    </div>
   );
 };
 

@@ -1,81 +1,115 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+  --primary-color: #23a6f0;
+  --secondary-color-1: #40bb15;
+  --secondary-color-2: #3c403d;
+  --text-color: #252b42;
+  --second-text-color: #737373;
+  --light-text-color: #fff;
+  --dark-background-color: #252b42;
+  --light-background-color: #fff;
+  --hover-color: #2a7cc7;
+  --disabled-element-color: #8ec2f2;
+  --muted-color: #bdbdbd;
+  --success-color: #2dc071;
+  --alert-color: #e77c40;
+  --danger-color: #e74040;
+  --light-gray-1: #fafafa;
+  --light-gray-2: #ececec;
+}
 
-  color: #121212;
-  background-color: #fafafa;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+:root {
+  --font-family: "Montserrat", sans-serif;
+  --second-family: "Roboto", sans-serif;
+  --third-family: "Object Sans", sans-serif;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  min-width: 320px;
-  min-height: 100vh;
+  background-color: var(--dark-background-color);
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-ul,
-ol {
-  padding: 0;
-}
-
-body,
 h1,
 h2,
 h3,
 h4,
-p,
-ul,
-ol,
-li,
-figure,
-figcaption,
-blockquote,
-dl,
-dd {
-  margin: 0;
+h5,
+h6,
+p {
+  transition: all 1000ms ease;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
-body {
-  min-height: 100vh;
-  scroll-behavior: smooth;
-  text-rendering: optimizeSpeed;
-  line-height: 1.5;
-  margin: 0 auto;
+p:last-child {
+  transition: all 1000ms ease;
+  margin-bottom: 0;
 }
 
 ul,
 ol {
+  transition: all 1000ms ease;
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
-a:not([class]) {
-  text-decoration-skip-ink: auto;
+a {
+  transition: all 1000ms ease;
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  transition: all 1000ms ease;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
 }
 
 img {
-  max-width: 100%;
   display: block;
+  max-width: 100%;
+  height: auto;
 }
 
-article > * + * {
-  margin-top: 1em;
+address {
+  transition: all 1000ms ease;
+  font-style: normal;
 }
 
 input,
-button,
-textarea,
-select {
-  font: inherit;
+textarea {
+  transition: all 1000ms ease;
+  outline: none;
+}
+
+.container {
+  min-width: 360px;
+  max-width: 420px;
+  padding: 0 30px;
+  margin: 0 auto;
+}
+
+/* .hiden-css {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+} */
+
+/* @media screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+  }
+} */
+
+@media screen and (min-width: 1024px) {
+  .container {
+    max-width: 1280px;
+  }
 }

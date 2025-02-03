@@ -5,7 +5,7 @@ import ContactList from "../../components/ContactList/ContactList";
 
 const Contacts = () => {
   return (
-    <div>
+    <div className="container">
       {" "}
       <ContactForm />
       <SearschBox />

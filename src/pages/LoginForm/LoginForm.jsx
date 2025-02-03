@@ -3,6 +3,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { loginThunk } from "../../redux/auth/authOperations";
+import s from "./LoginForm.module.css";
 
 const Login = () => {
   const initialValues = {
@@ -17,21 +18,26 @@ const Login = () => {
   return (
     <>
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
-        <Form>
-          <label>
-            <span>E-mail</span>
-            <Field name="email" />
+        <Form className={s.form}>
+          <label className={s.label}>
+            <span className={s.span}>E-mail</span>
+            <Field name="email" className={s.input} />
           </label>
-          <label>
-            <span>Password</span>
-            <Field type="password" name="password" />
+          <label className={s.label}>
+            <span className={s.span}>Password</span>
+            <Field type="password" name="password" className={s.input} />
           </label>
-          <button type="submit">Login</button>
+          <button type="submit" className={s.button}>
+            Login
+          </button>
+          <p className={s.text}>
+            New to Todos?
+            <Link to="/register">
+              <span className={s.link}> Register now</span>
+            </Link>
+          </p>
         </Form>
       </Formik>
-      <p>
-        New to Todos?<Link to="/register">Register now</Link>
-      </p>
     </>
   );
 };

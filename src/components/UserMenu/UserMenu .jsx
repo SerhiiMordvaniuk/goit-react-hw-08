@@ -20,7 +20,7 @@ const UserMenu = () => {
   };
 
   return (
-    <div className={s.header}>
+    <div className="container">
       <nav className={s.nav}>
         <NavLink to="/" className={buildLinkClass}>
           Home
