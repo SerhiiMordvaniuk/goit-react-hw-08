@@ -1,5 +1,5 @@
 import "./App.css";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Home from "../pages/Home/Home";
 import NotFound from "../pages/NotFound/NotFound";
 import Layout from "./Layout";
@@ -10,6 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { refreshUserThunk } from "../redux/auth/authOperations";
 import { selectIsRefreshing } from "../redux/auth/authSelectors";
+import PrivateRoute from "./PrivateRoute";
 
 function App() {
   const dispatch = useDispatch();
@@ -23,7 +24,14 @@ function App() {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
-          <Route path="/contacts" element={<Contacts />} />
+          <Route
+            path="/contacts"
+            element={
+              <PrivateRoute>
+                <Contacts />
+              </PrivateRoute>
+            }
+          />
         </Route>
         <Route path="*" element={<NotFound />} />
         <Route path="/login" element={<Login />}></Route>
