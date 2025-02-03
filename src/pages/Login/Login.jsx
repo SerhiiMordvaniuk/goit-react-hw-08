@@ -9,10 +9,9 @@ const Login = () => {
     password: "",
     email: "",
   };
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const handleSubmit = (values, options) => {
-    dispatch(loginThunk(values)).unwrap().then(navigate("/"));
+    dispatch(loginThunk(values));
     options.resetForm();
   };
   return (

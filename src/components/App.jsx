@@ -11,6 +11,7 @@ import { useEffect } from "react";
 import { refreshUserThunk } from "../redux/auth/authOperations";
 import { selectIsRefreshing } from "../redux/auth/authSelectors";
 import PrivateRoute from "./PrivateRoute";
+import PublicRoute from "./PublicRoute";
 
 function App() {
   const dispatch = useDispatch();
@@ -34,8 +35,22 @@ function App() {
           />
         </Route>
         <Route path="*" element={<NotFound />} />
-        <Route path="/login" element={<Login />}></Route>
-        <Route path="/register" element={<Register />}></Route>
+        <Route
+          path="/login"
+          element={
+            <PublicRoute>
+              <Login />
+            </PublicRoute>
+          }
+        ></Route>
+        <Route
+          path="/register"
+          element={
+            <PublicRoute>
+              <Register />
+            </PublicRoute>
+          }
+        ></Route>
       </Routes>
     </>
   );
