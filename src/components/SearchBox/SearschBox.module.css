@@ -2,7 +2,6 @@
   display: flex;
   gap: 6px;
   flex-direction: column;
-  margin-bottom: 40px;
 }
 
 .input {

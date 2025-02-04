@@ -13,6 +13,7 @@
 .info {
 }
 .title {
+  width: 300px;
   font-family: var(--font-family);
   font-weight: 700;
   font-size: 40px;

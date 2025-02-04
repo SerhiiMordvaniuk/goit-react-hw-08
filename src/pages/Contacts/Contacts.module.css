@@ -1,0 +1,7 @@
+.contacts {
+  padding-top: 32px;
+  padding-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
