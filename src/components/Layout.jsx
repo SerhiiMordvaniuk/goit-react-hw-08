@@ -5,11 +5,11 @@ import Footer from "./Footer/Footer";
 
 const Loyout = () => {
   return (
-    <>
+    <div>
       <UserMenu />
       <Outlet />
       <Footer />
-    </>
+    </div>
   );
 };
 

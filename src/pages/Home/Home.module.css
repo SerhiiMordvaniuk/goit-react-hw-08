@@ -5,6 +5,9 @@
   flex-direction: column;
   gap: 26px;
   align-items: center;
+  background-image: url("/src/assets/hero_bg.png");
+  background-repeat: no-repeat;
+  background-position: -200px 05px;
 }
 
 .info {

@@ -1,9 +1,21 @@
 .footer {
-  height: 20px;
   background-color: var(--light-text-color);
+  display: flex;
+  padding: 10px 10px;
+  justify-content: space-between;
 }
 
 .soc_list {
   display: flex;
   gap: 10px;
+}
+
+.copi {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 171%;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: var(--text-color);
 }
