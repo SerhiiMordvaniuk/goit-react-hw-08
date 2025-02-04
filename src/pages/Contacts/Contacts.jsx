@@ -5,12 +5,12 @@ import ContactList from "../../components/ContactList/ContactList";
 
 const Contacts = () => {
   return (
-    <div className="container">
+    <main className="container">
       {" "}
       <ContactForm />
       <SearschBox />
       <ContactList />
-    </div>
+    </main>
   );
 };
 

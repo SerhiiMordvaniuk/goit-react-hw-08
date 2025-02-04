@@ -5,6 +5,7 @@ import clsx from "clsx";
 import { selectIsLoggedIn, selectUser } from "../../redux/auth/authSelectors";
 import { useDispatch, useSelector } from "react-redux";
 import { logoutThunk } from "../../redux/auth/authOperations";
+import { IoIosLogOut } from "react-icons/io";
 
 const buildLinkClass = ({ isActive }) => {
   return clsx(s.link, isActive && s.active);
@@ -20,7 +21,7 @@ const UserMenu = () => {
   };
 
   return (
-    <div className="container">
+    <header className="container">
       <nav className={s.nav}>
         <NavLink to="/" className={buildLinkClass}>
           Home
@@ -31,21 +32,25 @@ const UserMenu = () => {
             <NavLink to="/contacts" className={buildLinkClass}>
               Contacts
             </NavLink>
-            <button onClick={handleClick}>Log Out</button>
+            <div className={s.user}>
+              <p className={s.name}>{user.name}</p>
+              <button onClick={handleClick} className={s.btn}>
+                <IoIosLogOut size="20px" color="var(--primary-color)" />
+              </button>
+            </div>
           </>
         ) : (
-          <>
+          <div className={s.login_register}>
             <NavLink to="/login" className={buildLinkClass}>
               Log in
             </NavLink>
             <NavLink to="/register" className={buildLinkClass}>
               Register
             </NavLink>
-          </>
+          </div>
         )}
       </nav>
-      {isLoggedIn && <p>Hello {user.name}</p>}
-    </div>
+    </header>
   );
 };
 

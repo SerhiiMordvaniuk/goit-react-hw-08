@@ -24,7 +24,7 @@ const ContactList = () => {
   const loading = useSelector(selectLoading);
 
   return (
-    <div>
+    <>
       {loading && <Loader />}
       {error && <p>Something went wrong....</p>}
       {
@@ -38,7 +38,7 @@ const ContactList = () => {
           })}
         </ul>
       }
-    </div>
+    </>
   );
 };
 

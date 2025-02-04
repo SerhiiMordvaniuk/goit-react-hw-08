@@ -1,0 +1,9 @@
+.footer {
+  height: 20px;
+  background-color: var(--light-text-color);
+}
+
+.soc_list {
+  display: flex;
+  gap: 10px;
+}

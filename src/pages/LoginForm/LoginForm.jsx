@@ -16,7 +16,7 @@ const Login = () => {
     options.resetForm();
   };
   return (
-    <>
+    <div className="container">
       <Formik initialValues={initialValues} onSubmit={handleSubmit}>
         <Form className={s.form}>
           <label className={s.label}>
@@ -38,7 +38,7 @@ const Login = () => {
           </p>
         </Form>
       </Formik>
-    </>
+    </div>
   );
 };
 

@@ -1,17 +1,46 @@
-.header {
-}
 .nav {
   display: flex;
   gap: 20px;
   text-decoration: none;
+  justify-content: space-between;
 }
 
 .link {
   text-decoration: none;
-  color: black;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 171%;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: var(--light-text-color);
+  transition: none;
 }
 
 .active {
   text-decoration: underline;
-  color: red;
+  color: var(--primary-color);
+}
+
+.user {
+  display: flex;
+}
+
+.btn {
+  border: none;
+  background-color: transparent;
+}
+
+.login_register {
+  display: flex;
+  gap: 6px;
+}
+
+.name {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 171%;
+  letter-spacing: 0.01em;
+  color: var(--second-text-color);
 }
