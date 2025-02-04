@@ -12,7 +12,8 @@ const Home = () => {
         <div className={s.link}>
           <Link to="/contacts">Go to contacts</Link>
         </div>
-        <img src="/public/phone.png" alt="phone" />
+        {/* <img src="/public/phone.png" alt="phone" /> */}
+        <img src="./phone.png" alt="phone" />
       </div>
     </div>
   );
