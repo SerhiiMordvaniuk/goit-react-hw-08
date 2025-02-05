@@ -23,31 +23,33 @@ const UserMenu = () => {
   return (
     <header className="container">
       <nav className={s.nav}>
-        <NavLink to="/" className={buildLinkClass}>
-          Home
-        </NavLink>
-
         {isLoggedIn ? (
           <>
-            <NavLink to="/contacts" className={buildLinkClass}>
-              Contacts
-            </NavLink>
+            <div className={s.home}>
+              <NavLink to="/" className={buildLinkClass}>
+                Home
+              </NavLink>
+              <NavLink to="/contacts" className={buildLinkClass}>
+                Contacts
+              </NavLink>
+            </div>
             <div className={s.user}>
               <p className={s.name}>{user.name}</p>
               <button onClick={handleClick} className={s.btn}>
-                <IoIosLogOut size="20px" color="var(--primary-color)" />
+                <IoIosLogOut size="25px" color="var(--primary-color)" />
               </button>
             </div>
           </>
         ) : (
-          <div className={s.login_register}>
-            <NavLink to="/login" className={buildLinkClass}>
-              Log in
+          <>
+            <NavLink to="/" className={buildLinkClass}>
+              Home
             </NavLink>
-            <NavLink to="/register" className={buildLinkClass}>
-              Register
-            </NavLink>
-          </div>
+            <div className={s.login_register}>
+              <NavLink to="/login">Login</NavLink>
+              <NavLink to="/register">Register</NavLink>
+            </div>
+          </>
         )}
       </nav>
     </header>

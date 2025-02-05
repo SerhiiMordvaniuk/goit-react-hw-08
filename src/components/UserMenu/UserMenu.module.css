@@ -1,8 +1,9 @@
 .nav {
   display: flex;
-  gap: 20px;
-  text-decoration: none;
   justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .link {
@@ -18,12 +19,18 @@
 }
 
 .active {
-  text-decoration: underline;
   color: var(--primary-color);
 }
 
+.home {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
 .user {
   display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
 .btn {
@@ -33,7 +40,16 @@
 
 .login_register {
   display: flex;
-  gap: 6px;
+  gap: 14px;
+  text-decoration: none;
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 171%;
+  letter-spacing: 0.01em;
+  text-align: center;
+  color: var(--light-text-color);
+  transition: none;
 }
 
 .name {
@@ -46,4 +62,39 @@
 }
 
 @media screen and (min-width: 768px) {
+  .nav {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+  .link {
+    text-decoration: none;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 171%;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: var(--light-text-color);
+    transition: none;
+  }
+
+  .active {
+    color: var(--primary-color);
+  }
+
+  .name {
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 171%;
+    letter-spacing: 0.01em;
+    color: var(--second-text-color);
+  }
+
+  .login_register {
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
 }

@@ -11,6 +11,8 @@ const Contacts = () => {
         {" "}
         <ContactForm />
         <SearschBox />
+      </div>
+      <div className={s.list}>
         <ContactList />
       </div>
     </main>

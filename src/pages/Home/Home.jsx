@@ -8,10 +8,11 @@ const Home = () => {
         <div className={s.info}>
           <h1 className={s.title}>Better app for your contacts</h1>
           <p className={s.text}>Save. Edit. Delete. </p>
+          <Link to="/contacts" className={s.link}>
+            Go to contacts
+          </Link>
         </div>
-        <div className={s.link}>
-          <Link to="/contacts">Go to contacts</Link>
-        </div>
+
         <img src="/phone.png" alt="phone" />
       </div>
     </div>

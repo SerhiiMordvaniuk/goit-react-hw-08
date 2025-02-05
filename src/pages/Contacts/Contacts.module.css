@@ -5,3 +5,28 @@
   flex-direction: column;
   gap: 28px;
 }
+
+.list {
+  padding-bottom: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  .contacts {
+    gap: 36px;
+    padding-top: 0;
+    background-image: url("/src/assets/hero_bg.png");
+    background-repeat: no-repeat;
+    background-position: 500px 05px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .contacts {
+    padding-top: 32px;
+    padding-bottom: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    background-position: 700px 05px;
+  }
+}

@@ -15,7 +15,6 @@
   line-height: 200%;
   letter-spacing: 0.01em;
   color: var(--second-text-color);
-  /* width: 330px; */
 }
 
 .text {
@@ -25,4 +24,13 @@
   line-height: 133%;
   letter-spacing: 0em;
   color: var(--light-text-color);
+}
+
+@media screen and (min-width: 768px) {
+  .form {
+    width: 420px;
+  }
+  .input {
+    font-size: 16px;
+  }
 }

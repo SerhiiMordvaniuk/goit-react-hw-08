@@ -1,13 +1,18 @@
 .footer {
   background-color: var(--light-text-color);
+}
+
+.info {
   display: flex;
-  padding: 10px 10px 8px 10px;
   justify-content: space-between;
+  padding: 10px;
+  align-items: center;
 }
 
 .soc_list {
   display: flex;
   gap: 10px;
+  align-items: center;
 }
 
 .copi {
@@ -18,4 +23,14 @@
   letter-spacing: 0.01em;
   text-align: center;
   color: var(--text-color);
+}
+
+@media screen and (min-width: 768px) {
+  .soc_list {
+    gap: 16px;
+  }
+  .info {
+    padding-bottom: 0;
+    padding-top: 0;
+  }
 }

@@ -15,11 +15,11 @@ const Contact = ({ id, name, number }) => {
     <div className={s.item}>
       <div className={s.contacts}>
         <div className={s.contact}>
-          <FaUserAlt size="20" color="var(--second-text-color)" />
+          <FaUserAlt size="15" color="var(--second-text-color)" />
           <p>{name}</p>
         </div>
         <div className={s.number}>
-          <FaPhoneAlt size="20" color="var(--second-text-color)" />
+          <FaPhoneAlt size="15" color="var(--second-text-color)" />
           <p>{number}</p>
         </div>
       </div>

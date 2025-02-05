@@ -3,7 +3,7 @@
   border: 1px solid var(--primary-color);
   border-radius: 10px;
   display: flex;
-  width: 340px;
+  width: 300px;
   justify-content: space-between;
   align-items: center;
   background-color: var(--light-text-color);
@@ -20,8 +20,8 @@
   border: none;
   border-radius: 5px;
   color: black;
-  width: 80px;
-  height: 40px;
+  width: 60px;
+  height: 36px;
   transition: all 250ms;
   font-family: var(--font-family);
   font-weight: 700;
@@ -45,7 +45,7 @@
   gap: 8px;
   font-family: var(--font-family);
   font-weight: 700;
-  font-size: 24px;
+  font-size: 16px;
   line-height: 133%;
   letter-spacing: 0em;
   color: var(--primary-color);
@@ -64,4 +64,16 @@
 }
 
 @media screen and (min-width: 768px) {
+  .item {
+    padding: 10px 10px;
+    border: 1px solid var(--primary-color);
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--light-text-color);
+  }
+}
+
+@media screen and (min-width: 1024px) {
 }
