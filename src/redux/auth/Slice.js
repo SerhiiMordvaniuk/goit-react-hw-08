@@ -4,7 +4,7 @@ import {
   logoutThunk,
   refreshUserThunk,
   registerThunk,
-} from "./authOperations";
+} from "./Operations";
 
 const initialState = {
   user: {

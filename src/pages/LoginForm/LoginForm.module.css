@@ -34,6 +34,7 @@
   line-height: 200%;
   letter-spacing: 0.01em;
   color: var(--second-text-color);
+  background-color: #f9f9f9;
 }
 
 .button {

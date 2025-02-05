@@ -2,8 +2,8 @@ import { Formik, Form, Field } from "formik";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { registerThunk } from "../../redux/auth/authOperations";
-import { selectIsLoggedIn, selectUser } from "../../redux/auth/authSelectors";
+import { registerThunk } from "../../redux/auth/Operations";
+import { selectIsLoggedIn, selectUser } from "../../redux/auth/Selectors";
 import s from "./RegistrationForm.module.css";
 
 const Register = () => {

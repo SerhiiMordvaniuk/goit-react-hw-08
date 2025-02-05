@@ -2,7 +2,7 @@ import { Field, Form, Formik } from "formik";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { loginThunk } from "../../redux/auth/authOperations";
+import { loginThunk } from "../../redux/auth/Operations";
 import s from "./LoginForm.module.css";
 
 const Login = () => {

@@ -3,7 +3,7 @@ import s from "./ContactForm.module.css";
 import { ErrorMessage, Field, Form, Formik } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contacts/contactsOperations";
+import { addContact } from "../../redux/contacts/Operations";
 
 const initialValues = {
   name: "",
@@ -12,13 +12,13 @@ const initialValues = {
 
 const validationSchema = Yup.object().shape({
   name: Yup.string()
-    .min(3, "Має бути мінімум три символи!")
-    .max(20, "Має бути не більше 20 символів!")
-    .required("Це поле має бути заповнено"),
+    .min(3, "Please enter at least 3 characters")
+    .max(20, "Enter maximum 20 characters")
+    .required("This field is required"),
   number: Yup.string()
-    .min(3, "Має бути мінімум три символи!")
-    .max(20, "Має бути не більше 20 символів!")
-    .required("Це поле має бути заповнено"),
+    .min(3, "Please enter at least 3 characters")
+    .max(20, "Enter maximum 20 characters")
+    .required("This field is required"),
 });
 
 const ContactForm = () => {
