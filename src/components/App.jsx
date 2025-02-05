@@ -8,8 +8,8 @@ import LoginForm from "../pages//LoginForm/LoginForm";
 import Register from "../pages/RegistrationForm/RegistrationForm";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { refreshUserThunk } from "../redux/auth/operations";
-import { selectIsRefreshing } from "../redux/auth/selectors";
+import { refreshUserThunk } from "../redux/auth/Operations";
+import { selectIsRefreshing } from "../redux/auth/Selectors";
 import PrivateRoute from "./PrivateRoute";
 import PublicRoute from "./PublicRoute";
 
