@@ -2,9 +2,9 @@ import React from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import s from "./UserMenu.module.css";
 import clsx from "clsx";
-import { selectIsLoggedIn, selectUser } from "../../redux/auth/Selectors";
+import { selectIsLoggedIn, selectUser } from "../../redux/auth/selectors";
 import { useDispatch, useSelector } from "react-redux";
-import { logoutThunk } from "../../redux/auth/Operations";
+import { logoutThunk } from "../../redux/auth/operations";
 import { IoIosLogOut } from "react-icons/io";
 
 const buildLinkClass = ({ isActive }) => {
